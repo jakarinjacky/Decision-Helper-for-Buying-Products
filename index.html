@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenShop AI - เช็คราคา เปรียบเทียบสินค้า ออนไลน์ 2024</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="GreenShop AI - ผู้ช่วยช้อปปิ้งส่วนตัว ค้นหาและเปรียบเทียบราคาสินค้าจากร้านค้าชั้นนำทั่วไทย Shopee, Lazada, Central, BananaIT เช็คเบี้ยประกัน, มูเตลูสีมงคล">
+    <meta name="keywords"
+        content="GreenShop, AI Shopping, เช็คราคา, เปรียบเทียบราคา, ช้อปปิ้งออนไลน์, ของดีราคาถูก, โปรโมชั่น, ส่วนลด">
+    <meta name="author" content="GreenShop Team">
+    <link rel="canonical" href="https://greenshop-ai.example.com/">
+
+    <!-- PWA -->
+    <meta name="theme-color" content="#00C853">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="https://placehold.co/192x192/00C853/ffffff?text=GS">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://greenshop-ai.example.com/">
+    <meta property="og:title" content="GreenShop AI - เช็คราคา เปรียบเทียบสินค้า">
+    <meta property="og:description"
+        content="ผู้ช่วยช้อปปิ้งส่วนตัว ค้นหาและเปรียบเทียบราคาสินค้าจากร้านค้าชั้นนำทั่วไทย">
+    <meta property="og:image" content="https://placehold.co/1200x630/00C853/ffffff?text=GreenShop+AI">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://greenshop-ai.example.com/">
+    <meta property="twitter:title" content="GreenShop AI - เช็คราคา เปรียบเทียบสินค้า">
+    <meta property="twitter:description"
+        content="ผู้ช่วยช้อปปิ้งส่วนตัว ค้นหาและเปรียบเทียบราคาสินค้าจากร้านค้าชั้นนำทั่วไทย">
+    <meta property="twitter:image" content="https://placehold.co/1200x630/00C853/ffffff?text=GreenShop+AI">
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                    .then(reg => console.log('SW Registered!', reg.scope))
+                    .catch(err => console.log('SW Registration Failed:', err));
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-inner">
+            <div class="top-links">
+                <a href="#" id="view-wishlist" onclick="toggleWishlistView(event)">❤️ รายการที่ชอบ</a>
+                <a href="#" onclick="toggleDarkMode(event)" id="theme-toggle">🌙 Dark Mode</a>
+                <a href="#">ศูนย์ช่วยเหลือ</a>
+                <a href="#">ลงขายสินค้า</a>
+            </div>
+            <div class="top-auth" id="auth-links">
+                <a href="#" id="login-link">เข้าสู่ระบบ</a>
+                <span class="divider">|</span>
+                <a href="#" id="register-link">สมัครสมาชิก</a>
+            </div>
+            <div class="top-auth user-profile" id="user-profile" style="display: none;">
+                <span id="user-name">User Name</span>
+                <span class="divider">|</span>
+                <a href="#" id="logout-link">ออกจากระบบ</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container header-inner">
+            <a href="#" class="logo">GreenShop<span class="dot">.</span>AI</a>
+
+            <div class="search-container">
+                <form class="search-form">
+                    <input type="text" placeholder="ค้นหาสินค้า, ยี่ห้อ หรือร้านค้า..." class="search-input">
+                    <button type="submit" class="search-btn">ค้นหา</button>
+                </form>
+                <div class="popular-keywords">
+                    <span>คำค้นยอดฮิต:</span>
+                    <a href="#">iPhone 15</a>
+                    <a href="#">หูฟังไร้สาย</a>
+                    <a href="#">รองเท้าวิ่ง</a>
+                    <a href="#">ครีมกันแดด</a>
+                </div>
+            </div>
+
+            <a href="#" class="cart-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+            </a>
+        </div>
+    </header>
+
+    <!-- Category Navigation -->
+    <nav class="category-nav">
+        <div class="container">
+            <ul class="cat-list">
+                <li><a href="#" class="active" data-cat="all">ทั้งหมด</a></li>
+                <li><a href="#" data-cat="phone">มือถือ & แท็บเล็ต</a></li>
+                <li><a href="#" data-cat="computer">คอมพิวเตอร์</a></li>
+                <li><a href="#" data-cat="electronics">เครื่องใช้ไฟฟ้า</a></li>
+                <li><a href="#" data-cat="fashion">แฟชั่น</a></li>
+                <li><a href="#" data-cat="beauty">สุขภาพ & ความงาม</a></li>
+                <li><a href="#" data-cat="gaming">เกม & ของเล่น</a></li>
+                <li><a href="#" data-cat="home">บ้าน & สวน</a></li>
+                <li><a href="#" data-cat="sports">กีฬา</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero / Banner Section -->
+        <section class="hero-banner">
+            <div class="container">
+                <div class="banner-grid">
+                    <div class="main-banner">
+                        <div class="banner-content">
+                            <h1>เปรียบเทียบราคา จากทุกร้านค้าชั้นนำ</h1>
+                            <p>ช้อปฉลาด ประหยัดกว่า ด้วยข้อมูลที่ครบถ้วนที่สุด</p>
+                            <a href="#" class="btn btn-white">ดูดีลวันนี้</a>
+                        </div>
+                        <!-- Abstract Green Shapes for Visual Interest -->
+                        <div class="banner-shapes">
+                            <div class="shape s1"></div>
+                            <div class="shape s2"></div>
+                        </div>
+                    </div>
+                    <div class="side-banner b1">
+                        <h3>คูปองส่วนลด</h3>
+                        <p>ลดสูงสุด 50%</p>
+                    </div>
+                    <div class="side-banner b2">
+                        <h3>สินค้ามาใหม่</h3>
+                        <p>อัพเดททุกวัน</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Categories Grid (Icons) -->
+        <section class="section-categories">
+            <div class="container">
+                <h2 class="section-title">หมวดหมู่ยอดนิยม</h2>
+                <div class="category-grid-icons">
+                    <a href="#" class="cat-item" data-cat="phone">
+                        <div class="cat-icon">📱</div>
+                        <span>โทรศัพท์</span>
+                    </a>
+                    <a href="#" class="cat-item" data-cat="computer">
+                        <div class="cat-icon">💻</div>
+                        <span>โน๊ตบุ๊ค</span>
+                    </a>
+                    <a href="#" class="cat-item" data-cat="camera">
+                        <div class="cat-icon">📷</div>
+                        <span>กล้อง</span>
+                    </a>
+                    <a href="#" class="cat-item" data-cat="tv">
+                        <div class="cat-icon">📺</div>
+                        <span>ทีวี</span>
+                    </a>
+                    <a href="#" class="cat-item" data-cat="shoes">
+                        <div class="cat-icon">👟</div>
+                        <span>รองเท้า</span>
+                    </a>
+                    <a href="#" class="cat-item" data-cat="beauty">
+                        <div class="cat-icon">💄</div>
+                        <span>เครื่องสำอาง</span>
+                    </a>
+                    <a href="#" class="cat-item" data-cat="watch">
+                        <div class="cat-icon">⌚</div>
+                        <span>นาฬิกา</span>
+                    </a>
+                    <a href="#" class="cat-item" data-cat="gaming">
+                        <div class="cat-icon">🎮</div>
+                        <span>เกม & ของเล่น</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hot Deals Section -->
+        <section class="section-deals">
+            <div class="container">
+                <div class="section-header-row">
+                    <h2 class="section-title">ดีลเด็ดประจำวัน 🔥</h2>
+                    <a href="#" class="see-more">ดูทั้งหมด ></a>
+                </div>
+
+                <div class="filter-bar">
+                    <div class="filter-group">
+                        <label>เรียงตาม:</label>
+                        <select id="sort-select" class="sort-select">
+                            <option value="newest">✨ สินค้าใหม่ล่าสุด</option>
+                            <option value="price-asc">💰 ราคา: ต่ำ - สูง</option>
+                            <option value="price-desc">💎 ราคา: สูง - ต่ำ</option>
+                            <option value="rating">⭐ คะแนนรีวิวสูงสุด</option>
+                        </select>
+                    </div>
+                    <div class="filter-group price-filter">
+                        <label>ช่วงราคา:</label>
+                        <input type="number" id="min-price" placeholder="ตํ่าสุด" class="price-input">
+                        <span>-</span>
+                        <input type="number" id="max-price" placeholder="สูงสุด" class="price-input">
+                        <button id="apply-price" class="btn-filter">ตกลง</button>
+                    </div>
+                </div>
+
+                <div class="product-grid" id="product-grid">
+                    <!-- Products will be rendered here by JS -->
+                </div>
+
+                <div class="load-more-container" style="text-align: center; margin-top: 30px; display: none;">
+                    <button id="load-more-btn" class="btn-load-more">โหลดเพิ่มเติม</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Modal -->
+        <div id="price-modal" class="modal-overlay">
+            <div class="modal">
+                <button class="modal-close" onclick="closeModal()">×</button>
+                <div class="modal-header">
+                    <div class="modal-product-img" id="modal-img"></div>
+                    <div class="modal-info">
+                        <h2 id="modal-product-name">Product Name</h2>
+                        <div class="modal-best-price">Best Price: <span id="modal-best-price">฿0</span></div>
+                    </div>
+                </div>
+
+                <!-- New Details Section -->
+                <div id="modal-details" class="modal-details">
+                    <!-- Pros/Cons/Suitability injected here -->
+                </div>
+
+                <div class="store-list" id="modal-store-list">
+                    <!-- Store items will be injected here -->
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <!-- Auth Modal -->
+        <div id="auth-modal" class="modal-overlay">
+            <div class="modal auth-modal-content">
+                <button class="modal-close" onclick="closeAuthModal()">×</button>
+                <div class="auth-tabs">
+                    <button class="auth-tab active" id="tab-login" onclick="switchAuthTab('login')">เข้าสู่ระบบ</button>
+                    <button class="auth-tab" id="tab-register" onclick="switchAuthTab('register')">สมัครสมาชิก</button>
+                </div>
+
+                <!-- Login Form -->
+                <form id="login-form" class="auth-form active">
+                    <div class="form-group">
+                        <label for="login-email">อีเมล</label>
+                        <input type="email" id="login-email" required placeholder="example@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">รหัสผ่าน</label>
+                        <input type="password" id="login-password" required placeholder="********">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">เข้าสู่ระบบ</button>
+                    <p class="auth-footer">ยังไม่มีบัญชี? <a href="#"
+                            onclick="switchAuthTab('register')">สมัครสมาชิก</a></p>
+                </form>
+
+                <!-- Register Form -->
+                <form id="register-form" class="auth-form">
+                    <div class="form-group">
+                        <label for="reg-name">ชื่อ-นามสกุล</label>
+                        <input type="text" id="reg-name" required placeholder="สมชาย ใจดี">
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-email">อีเมล</label>
+                        <input type="email" id="reg-email" required placeholder="example@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-password">รหัสผ่าน</label>
+                        <input type="password" id="reg-password" required placeholder="********">
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-confirm-password">ยืนยันรหัสผ่าน</label>
+                        <input type="password" id="reg-confirm-password" required placeholder="********">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">สมัครสมาชิก</button>
+                    <p class="auth-footer">มีบัญชีอยู่แล้ว? <a href="#" onclick="switchAuthTab('login')">เข้าสู่ระบบ</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+
+        <section class="partners-section">
+            <div class="container">
+                <p>เปรียบเทียบราคาจากร้านค้าชั้นนำ</p>
+                <div class="partner-logos">
+                    <!-- Text placeholders for logos -->
+                    <span class="partner">Shopee</span>
+                    <span class="partner">Lazada</span>
+                    <span class="partner">Central</span>
+                    <span class="partner">JIB</span>
+                    <span class="partner">BananaIT</span>
+                    <span class="partner">PowerBuy</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>GreenShop.AI</h3>
+                    <p>ผู้ช่วยค้นหาสินค้า และเปรียบเทียบราคาที่ดีที่สุดสำหรับคุณ</p>
+                </div>
+                <div class="footer-links">
+                    <h4>เกี่ยวกับเรา</h4>
+                    <ul>
+                        <li><a href="#">รู้จัก GreenShop AI</a></li>
+                        <li><a href="#">ร่วมงานกับเรา</a></li>
+                        <li><a href="#">ติดต่อลงโฆษณา</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>ช่วยเหลือ</h4>
+                    <ul>
+                        <li><a href="#">วิธีใช้งาน</a></li>
+                        <li><a href="#">นโยบายความเป็นส่วนตัว</a></li>
+                        <li><a href="#">ข้อตกลงการใช้งาน</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 GreenShop AI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AI Chat Widget -->
+    <div class="chat-widget">
+        <button id="chat-fab" class="chat-fab" aria-label="Open AI Assistant">
+            <span class="fab-icon">🤖</span>
+            <span class="fab-text">ช่วยเลือกของ</span>
+        </button>
+        <div id="chat-window" class="chat-window">
+            <div class="chat-header">
+                <div class="chat-title">
+                    <span>🤖</span> GreenShop Assistant
+                </div>
+                <button id="chat-close" class="chat-close" aria-label="Close Chat">×</button>
+            </div>
+            <div id="chat-messages" class="chat-messages">
+                <!-- Messages will be injected here -->
+            </div>
+            <form id="chat-form" class="chat-input-area">
+                <input type="text" id="chat-input" placeholder="พิมพ์ข้อความที่นี่..." autocomplete="off">
+                <button type="submit" id="chat-send">ส่ง</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

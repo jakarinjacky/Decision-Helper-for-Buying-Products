@@ -1,0 +1,222 @@
+[
+    {
+        "name": "iPhone 15 Pro Max",
+        "image": "https://cdn.dummyjson.com/product-images/smartphones/iphone-13-pro/1.webp",
+        "category": "โทรศัพท์"
+    },
+    {
+        "name": "Samsung Galaxy S24 Ultra",
+        "image": "https://cdn.dummyjson.com/product-images/smartphones/samsung-galaxy-s10/1.webp",
+        "category": "โทรศัพท์"
+    },
+    {
+        "name": "Google Pixel 8 Pro",
+        "image": "https://images.unsplash.com/photo-1616348436168-de43ad0db179?auto=format&fit=crop&w=400&q=80",
+        "category": "โทรศัพท์"
+    },
+    {
+        "name": "Xiaomi 13T Pro",
+        "image": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=400&q=80",
+        "category": "โทรศัพท์"
+    },
+    {
+        "name": "OPPO Find N3 Flip",
+        "image": "https://images.unsplash.com/photo-1621330387646-5a25e295d433?auto=format&fit=crop&w=400&q=80",
+        "category": "โทรศัพท์"
+    },
+    {
+        "name": "Vivo X100 Pro",
+        "image": "https://images.unsplash.com/photo-1605236453806-6ff36a86fa2e?auto=format&fit=crop&w=400&q=80",
+        "category": "โทรศัพท์"
+    },
+    {
+        "name": "OnePlus 12",
+        "image": "https://images.unsplash.com/photo-1565849904461-04a58ad377e0?auto=format&fit=crop&w=400&q=80",
+        "category": "โทรศัพท์"
+    },
+    {
+        "name": "Honor Magic 6 Pro",
+        "image": "https://images.unsplash.com/photo-1546054454-aa26e2b734c7?auto=format&fit=crop&w=400&q=80",
+        "category": "โทรศัพท์"
+    },
+    {
+        "name": "Realme GT 5 Pro",
+        "image": "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?auto=format&fit=crop&w=400&q=80",
+        "category": "โทรศัพท์"
+    },
+    {
+        "name": "Asus ROG Phone 8",
+        "image": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=400&q=80",
+        "category": "โทรศัพท์"
+    },
+    {
+        "name": "Nothing Phone (2)",
+        "image": "https://images.unsplash.com/photo-1689262071295-a040b2a7593c?auto=format&fit=crop&w=400&q=80",
+        "category": "โทรศัพท์"
+    },
+    {
+        "name": "Sony Xperia 1 V",
+        "image": "https://images.unsplash.com/photo-1686303254397-2a146e297893?auto=format&fit=crop&w=400&q=80",
+        "category": "โทรศัพท์"
+    },
+    {
+        "name": "Motorola Razr 40 Ultra",
+        "image": "https://images.unsplash.com/photo-1685970222046-fd7ee98d4380?auto=format&fit=crop&w=400&q=80",
+        "category": "โทรศัพท์"
+    },
+    {
+        "name": "Nokia G42 5G",
+        "image": "https://images.unsplash.com/photo-1580910051074-3eb6948d3ea0?auto=format&fit=crop&w=400&q=80",
+        "category": "โทรศัพท์"
+    },
+    {
+        "name": "Poco F5 Pro",
+        "image": "https://images.unsplash.com/photo-1596742578443-7682e525c489?auto=format&fit=crop&w=400&q=80",
+        "category": "โทรศัพท์"
+    },
+    {
+        "name": "Infinix Zero 30",
+        "image": "https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?auto=format&fit=crop&w=400&q=80",
+        "category": "โทรศัพท์"
+    },
+    {
+        "name": "MacBook Air M2",
+        "image": "https://cdn.dummyjson.com/product-images/laptops/apple-macbook-pro-14-inch-space-grey/1.webp",
+        "category": "โน้ตบุ๊ก"
+    },
+    {
+        "name": "Dell XPS 13 Plus",
+        "image": "https://images.unsplash.com/photo-1593642632823-8f78536788c6?auto=format&fit=crop&w=400&q=80",
+        "category": "โน้ตบุ๊ก"
+    },
+    {
+        "name": "HP Spectre x360",
+        "image": "https://images.unsplash.com/photo-1544731612-de7f96afe55f?auto=format&fit=crop&w=400&q=80",
+        "category": "โน้ตบุ๊ก"
+    },
+    {
+        "name": "Lenovo ThinkPad X1 Carbon",
+        "image": "https://images.unsplash.com/photo-1588872657578-a3d8919b9558?auto=format&fit=crop&w=400&q=80",
+        "category": "โน้ตบุ๊ก"
+    },
+    {
+        "name": "Asus Zenbook 14",
+        "image": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=400&q=80",
+        "category": "โน้ตบุ๊ก"
+    },
+    {
+        "name": "Microsoft Surface Laptop 5",
+        "image": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=400&q=80",
+        "category": "โน้ตบุ๊ก"
+    },
+    {
+        "name": "Sony A7 IV",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Sony_Alpha_7_Mark_IV.jpg",
+        "category": "กล้อง"
+    },
+    {
+        "name": "Canon EOS R6 II",
+        "image": "https://images.unsplash.com/photo-1519638831568-d9897f54ed69?auto=format&fit=crop&w=400&q=80",
+        "category": "กล้อง"
+    },
+    {
+        "name": "Nikon Z8",
+        "image": "https://images.unsplash.com/photo-1512790182412-b19e6d62bc39?auto=format&fit=crop&w=400&q=80",
+        "category": "กล้อง"
+    },
+    {
+        "name": "Fujifilm X-T5",
+        "image": "https://images.unsplash.com/photo-1516724562728-afc824a36e84?auto=format&fit=crop&w=400&q=80",
+        "category": "กล้อง"
+    },
+    {
+        "name": "Samsung Neo QLED 8K",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Samsung_QLED_TV_8K_-_75_inches_-_2018-11-02.jpg/800px-Samsung_QLED_TV_8K_-_75_inches_-_2018-11-02.jpg",
+        "category": "ทีวี"
+    },
+    {
+        "name": "LG G3 OLED evo",
+        "image": "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=400&q=80",
+        "category": "ทีวี"
+    },
+    {
+        "name": "Sony Bravia XR A95L",
+        "image": "https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?auto=format&fit=crop&w=400&q=80",
+        "category": "ทีวี"
+    },
+    {
+        "name": "Nike Air Max 1",
+        "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=400&q=80",
+        "category": "รองเท้า"
+    },
+    {
+        "name": "Adidas Samba",
+        "image": "https://images.unsplash.com/photo-1587563871167-1ee9c731aefb?auto=format&fit=crop&w=400&q=80",
+        "category": "รองเท้า"
+    },
+    {
+        "name": "New Balance 9060",
+        "image": "https://images.unsplash.com/photo-1539185441755-769473a23570?auto=format&fit=crop&w=400&q=80",
+        "category": "รองเท้า"
+    },
+    {
+        "name": "Dior Addict Lip Glow",
+        "image": "https://cdn.dummyjson.com/product-images/beauty/red-lipstick/1.webp",
+        "category": "เครื่องสำอาง"
+    },
+    {
+        "name": "Chanel N°5 Perfume",
+        "image": "https://cdn.dummyjson.com/product-images/fragrances/chanel-coco-noir-eau-de/1.webp",
+        "category": "เครื่องสำอาง"
+    },
+    {
+        "name": "Estee Lauder Advanced Night Repair",
+        "image": "https://cdn.dummyjson.com/product-images/skin-care/attitude-super-leaves-hand-soap/1.webp",
+        "category": "เครื่องสำอาง"
+    },
+    {
+        "name": "Apple Watch Ultra 2",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/2/22/Apple_Watch_Ultra_2.jpg",
+        "category": "นาฬิกา"
+    },
+    {
+        "name": "Garmin Fenix 7 Pro",
+        "image": "https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=400&q=80",
+        "category": "นาฬิกา"
+    },
+    {
+        "name": "Samsung Galaxy Watch 6",
+        "image": "https://images.unsplash.com/photo-1508964942454-1a56651d54ac?auto=format&fit=crop&w=400&q=80",
+        "category": "นาฬิกา"
+    },
+    {
+        "name": "PlayStation 5 Slim",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/PlayStation_5_logo.svg/1200px-PlayStation_5_logo.svg.png",
+        "category": "เกม & ของเล่น"
+    },
+    {
+        "name": "Xbox Series X",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Xbox_Series_X_and_Series_S.jpg",
+        "category": "เกม & ของเล่น"
+    },
+    {
+        "name": "Nintendo Switch OLED",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Nintendo_Switch_OLED.png",
+        "category": "เกม & ของเล่น"
+    },
+    {
+        "name": "Levi's 501 Original",
+        "image": "https://images.unsplash.com/photo-1542272617-08f086303294?auto=format&fit=crop&w=400&q=80",
+        "category": "เสื้อผ้า"
+    },
+    {
+        "name": "Uniqlo U Crew Neck",
+        "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=400&q=80",
+        "category": "เสื้อผ้า"
+    },
+    {
+        "name": "Zara Oversized Blazer",
+        "image": "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=400&q=80",
+        "category": "เสื้อผ้า"
+    }
+]
